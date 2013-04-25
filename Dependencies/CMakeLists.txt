@@ -125,6 +125,8 @@ ENDIF(APPLE)
     SET(internal_ASSIMP ON)
 #ENDIF(ASSIMP_FOUND)
 
+SET(internal_SCINTILLA ON)
+
 OPTION(POLYCODE_DEPS_GLEXT "Download GL/glext.h header" ${internal_GLEXT})
 OPTION(POLYCODE_DEPS_WGLEXT "Download GL/wglext.h header" ${internal_WGLEXT})
 
@@ -138,6 +140,7 @@ OPTION(POLYCODE_DEPS_LUA51 "Download and build the Lua51 package" ${internal_LUA
 OPTION(POLYCODE_DEPS_BOX2D "Download and build the Box2D package" ${internal_BOX2D})
 OPTION(POLYCODE_DEPS_BULLET "Download and build the Bullet package" ${internal_BULLET})
 OPTION(POLYCODE_DEPS_ASSIMP "Download and build the Assimp package" ${internal_ASSIMP})
+OPTION(POLYCODE_DEPS_SCINTILLA "Download and build the Scintilla package" ${internal_SCINTILLA})
 
 IF(POLYCODE_DEPS_PNG)
     INCLUDE(ExternalPNG)
@@ -188,3 +191,7 @@ ENDIF(POLYCODE_DEPS_GLEXT)
 IF(POLYCODE_DEPS_WGLEXT)
     INCLUDE(ExternalWGLExt)
 ENDIF(POLYCODE_DEPS_WGLEXT)
+
+IF(POLYCODE_DEPS_SCINTILLA)
+    INCLUDE(ExternalScintilla)
+ENDIF(POLYCODE_DEPS_SCINTILLA)
