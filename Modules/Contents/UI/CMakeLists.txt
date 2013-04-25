@@ -23,6 +23,8 @@ SET(polycodeUI_SRCS
     Source/PolyUIWindow.cpp
     Source/PolyUIFileDialog.cpp
     Source/PolyUIMenuBar.cpp
+    Source/scintilla/PlatPolycode.cpp
+    Source/scintilla/ScintillaPolycode.cpp
 )
 
 SET(polycodeUI_HDRS
@@ -49,10 +51,14 @@ SET(polycodeUI_HDRS
     Include/PolyUIWindow.h
     Include/PolyUIFileDialog.h
     Include/PolyUIMenuBar.h
+    Include/scintilla/PlatPolycode.h
+    Include/scintilla/ScintillaPolycode.h
 )
 
 INCLUDE_DIRECTORIES(
     Include
+    Include/scintilla
+    ${SCINTILLA_INCLUDE_DIR}
 )
 
 SET(CMAKE_DEBUG_POSTFIX "_d")
@@ -61,6 +67,7 @@ ADD_LIBRARY(PolycodeUI ${polycodeUI_SRCS} ${polycodeUI_HDRS})
 
 TARGET_LINK_LIBRARIES(PolycodeUI 
     Polycore 
+    scintilla
     ${BOX2D_LIBRARIES}
     ${OPENGL_LIBRARIES}
     ${OPENAL_LIBRARY}
