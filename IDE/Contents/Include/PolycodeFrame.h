@@ -210,6 +210,8 @@ public:
 	
 	UIWindow *aboutWindow;
 	UIButton *aboutOKButton;
+
+	UIWindow *scintillaWindow;
 private:
 	
 	int frameSizeX;

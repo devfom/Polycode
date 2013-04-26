@@ -55,7 +55,13 @@
 #include "Editor.h"
 #include "ScintillaBase.h"
 
-class ScintillaPolycode : public ScintillaBase
+ #include "PolyGlobals.h"
+
+#ifdef SCI_NAMESPACE
+namespace Scintilla {
+#endif
+
+class _PolyExport ScintillaPolycode : public ScintillaBase
 {
 public:
     ScintillaPolycode();
@@ -86,3 +92,7 @@ protected:
     virtual sptr_t DefWndProc(unsigned int iMessage, uptr_t wParam, sptr_t lParam);
 
 };
+
+#ifdef SCI_NAMESPACE
+}
+#endif

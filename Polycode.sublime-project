@@ -1,0 +1,64 @@
+{
+	"folders":
+	[        
+        {
+            "name": "Core",
+            "path": "Core/Contents"            
+        },
+        {
+            "name": "Core_Dependencies",
+            "path": "Release/Linux/Framework/Core/Dependencies",
+            "folder_exclude_patterns":
+            [
+                "bin"
+            ]            
+        },
+		{
+            "name": "IDE",
+			"path": "IDE",
+            "folder_exclude_patterns":
+            [
+                "Assets",
+                "Resources",
+                "Build/*/Build"
+            ]
+		},
+        {
+            "name": "Modules",
+            "path": "Modules/Contents",
+            "folder_exclude_patterns":
+            [
+                "Bindings"
+            ]
+        },
+        {
+            "name": "Scintilla_Qt",
+            "path": "/home/vasilyaf/Projects/scintilla/qt/ScintillaEditBase"
+        },
+        {
+            "name": "CMake",
+            "path": "CMake"
+        }
+	],
+    "folder_exclude_patterns":
+    [
+        ".git"
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Build IDE Linux",
+            "working_dir": "${project_path}/IDE/Build/Linux",
+            "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+            "cmd": ["make"],
+            "variants":
+            [
+                {
+                    "name": "Make clean",
+                    "working_dir": "${project_path}/IDE/Build/Linux",
+                    "cmd": ["make clean"]
+                }
+            ]
+        }
+    ]
+}

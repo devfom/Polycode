@@ -15,7 +15,7 @@ include_directories ( include src lexlib polycode )
 file (GLOB SCINTILLA_SRC src/*.cxx lexlib/*.cxx lexers/*.cxx polycode/*.cxx)
 
 IF(CMAKE_COMPILER_IS_GNUCXX)
-    add_definitions( -DSCI_LEXER=1 -DSCINTILLA_QT=1 -DSTATIC_BUILD=1 )
+    add_definitions( -DSCI_LEXER=1 -DSCINTILLA_QT=1 -DSTATIC_BUILD=1 -DSCI_NAMESPACE=1 )
 ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
 # We only want a static lib

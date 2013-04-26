@@ -21,11 +21,13 @@
 */
 #include "PolyUICodeEditor.h"
 
-PolyUICodeEditor editor;
+using namespace Polycode;
 
-PolyUICodeEditor::PolyUICodeEditor()
+
+PolyUICodeEditor::PolyUICodeEditor(String windowName, Number width, Number height)
+: BaseClass(windowName, width, height)
 {
-    scintilla = new ScintillaPolycode();
+    scintilla = new Scintilla::ScintillaPolycode();
 }
 
 PolyUICodeEditor::~PolyUICodeEditor()
@@ -35,4 +37,5 @@ PolyUICodeEditor::~PolyUICodeEditor()
         delete scintilla;
         scintilla = NULL;
     }
+    
 }

@@ -21,6 +21,7 @@
 */
 
 #include "PolycodeFrame.h"
+#include "PolyUICodeEditor.h"
 
 
 UIColorPicker *globalColorPicker;
@@ -615,6 +616,9 @@ PolycodeFrame::PolycodeFrame() : ScreenEntity() {
 	aboutWindow->addChild(aboutOKButton);
 	aboutOKButton->setPosition(700, 420);
 	aboutOKButton->addEventListener(this, UIEvent::CLICK_EVENT);
+
+	scintillaWindow = new PolyUICodeEditor("Scintilla", 800, 600);
+	scintillaWindow->closeOnEscape = true;	
 	
 	ScreenLabel *versionLabel = new ScreenLabel("version 0.8.2", 12, "mono");
 	aboutWindow->addChild(versionLabel);

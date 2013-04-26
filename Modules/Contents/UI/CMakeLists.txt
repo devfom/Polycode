@@ -8,6 +8,7 @@ SET(polycodeUI_SRCS
     Source/PolyUIVSizer.cpp
     Source/PolyUIButton.cpp
     Source/PolyUICheckBox.cpp
+    Source/PolyUICodeEditor.cpp
     Source/PolyUIComboBox.cpp
     Source/PolyUIColorBox.cpp
     Source/PolyUIEvent.cpp
@@ -23,8 +24,8 @@ SET(polycodeUI_SRCS
     Source/PolyUIWindow.cpp
     Source/PolyUIFileDialog.cpp
     Source/PolyUIMenuBar.cpp
-    Source/scintilla/PlatPolycode.cpp
-    Source/scintilla/ScintillaPolycode.cpp
+    Source/PlatPolycode.cpp
+    Source/ScintillaPolycode.cpp
 )
 
 SET(polycodeUI_HDRS
@@ -36,6 +37,7 @@ SET(polycodeUI_HDRS
     Include/PolyUIMenu.h
     Include/PolyUIButton.h
     Include/PolyUICheckBox.h
+    Include/PolyUICodeEditor.h
     Include/PolyUIComboBox.h
     Include/PolyUIColorBox.h
     Include/PolyUIEvent.h
@@ -51,15 +53,16 @@ SET(polycodeUI_HDRS
     Include/PolyUIWindow.h
     Include/PolyUIFileDialog.h
     Include/PolyUIMenuBar.h
-    Include/scintilla/PlatPolycode.h
-    Include/scintilla/ScintillaPolycode.h
+    Include/PlatPolycode.h
+    Include/ScintillaPolycode.h
 )
 
 INCLUDE_DIRECTORIES(
-    Include
-    Include/scintilla
+    Include    
     ${SCINTILLA_INCLUDE_DIR}
 )
+
+ADD_DEFINITIONS( -DSCI_NAMESPACE=1 )
 
 SET(CMAKE_DEBUG_POSTFIX "_d")
 

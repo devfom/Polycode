@@ -177,6 +177,8 @@ PolycodeIDEApp::PolycodeIDEApp(PolycodeView *view) : EventDispatcher() {
 
 	needsRedraw = false;
 	lastConnected = false;
+
+	frame->showModal(frame->scintillaWindow);
 }
 
 void PolycodeIDEApp::renameFile() {
@@ -189,7 +191,8 @@ void PolycodeIDEApp::renameFile() {
 }
 
 void PolycodeIDEApp::showAbout() {
-	frame->showModal(frame->aboutWindow);
+	//frame->showModal(frame->aboutWindow);
+	//codeEditor->showModal();
 }
 
 void PolycodeIDEApp::doRemoveFile() {

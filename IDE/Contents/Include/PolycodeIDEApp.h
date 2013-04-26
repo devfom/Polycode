@@ -33,6 +33,7 @@
 //#include "PolyCocoaCore.h"
 #include "PolycodeUI.h"
 #include "PolycodeFrame.h"
+#include "PolyUICodeEditor.h"
 
 #include "PolycodeImageEditor.h"
 #include "PolycodeMaterialEditor.h"
@@ -115,6 +116,5 @@ protected:
 	
 	PolycodeRemoteDebugger *debugger;
 
-	UIMenuBar *menuBar;
-	
+	UIMenuBar *menuBar;	
 };

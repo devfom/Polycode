@@ -21,17 +21,24 @@
 */
 #pragma once
 
+#include "PolyGlobals.h"
+#include "PolyUIWindow.h"
 #include "ScintillaPolycode.h"
 
 namespace Polycode {
 
-    class PolyUICodeEditor : public ScreenEntity
-    {
-    public:
-     PolyUICodeEditor();
-     ~PolyUICodeEditor();
+class _PolyExport PolyUICodeEditor : public UIWindow
+{
+public:
+    typedef UIWindow BaseClass;
 
-    private:
-        ScintillaPolycode *scintilla;
-    };
+public:    
+    PolyUICodeEditor(String windowName, Number width, Number height);
+    ~PolyUICodeEditor();
+
+private:
+    Scintilla::ScintillaPolycode *scintilla;
+
+};
+
 }

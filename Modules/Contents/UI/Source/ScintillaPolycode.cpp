@@ -22,8 +22,9 @@
 
 #include "ScintillaPolycode.h"
 
-ScintillaPolycode app;
-
+#ifdef SCI_NAMESPACE
+namespace Scintilla {
+#endif
 
 ScintillaPolycode::ScintillaPolycode()
 {
@@ -129,3 +130,7 @@ sptr_t ScintillaPolycode::DefWndProc(unsigned int iMessage, uptr_t wParam, sptr_
 {
     
 }
+
+#ifdef SCI_NAMESPACE
+}
+#endif
