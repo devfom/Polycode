@@ -35,6 +35,7 @@ INSTALL(FILES
     include/Platform.h
     include/Scintilla.h
     include/ILexer.h    
+    include/SciLexer.h
     DESTINATION include/scintilla331/)
 
 INSTALL(FILES

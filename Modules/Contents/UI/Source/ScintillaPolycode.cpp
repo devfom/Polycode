@@ -21,115 +21,166 @@
  */
 
 #include "ScintillaPolycode.h"
+#include "PolyUIWindow.h"
 
 #ifdef SCI_NAMESPACE
 namespace Scintilla {
+
 #endif
 
-ScintillaPolycode::ScintillaPolycode()
-{
+ScintillaPolycode::ScintillaPolycode(Polycode::UIWindow *parentWindow)
+{    
+    // Protected from Editor.h
+    wMain = parentWindow;    
+    //printf("***DEBUG***: %s pointer is %p\n", __PRETTY_FUNCTION__, (void *)wMain);
 
 }
 
 ScintillaPolycode::~ScintillaPolycode()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::Initialise()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::Finalise()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::CreateCallTipWindow(PRectangle rc)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::AddToPopUp(const char *label, int cmd, bool enabled)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::SetVerticalScrollPos()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::SetHorizontalScrollPos()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 bool ScintillaPolycode::ModifyScrollBars(int nMax, int nPage)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::Copy()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::CopyAllowLine()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 bool ScintillaPolycode::CanPaste()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::Paste()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::ClaimSelection()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::NotifyChange()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::NotifyParent(SCNotification scn)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::CopyToClipboard(const SelectionText &selectedText)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::SetTicking(bool on)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 void ScintillaPolycode::SetMouseCapture(bool on)
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+
 
 }
 
 bool ScintillaPolycode::HaveMouseCapture()
 {
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+    return false;
+
 
 }
 
 sptr_t ScintillaPolycode::DefWndProc(unsigned int iMessage, uptr_t wParam, sptr_t lParam)
 {
-    
+    printf("***DEBUG***: %s\n", __PRETTY_FUNCTION__);
+    return 0;    
 }
+
+sptr_t ScintillaPolycode::WndProc(unsigned int iMessage, uptr_t wParam, sptr_t lParam)
+{
+    BaseClass::WndProc(iMessage, wParam, lParam);    
+}
+
 
 #ifdef SCI_NAMESPACE
 }

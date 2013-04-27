@@ -19,7 +19,11 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
 */
+
+#include <cstdio>
 #include "PolyUICodeEditor.h"
+#include "Scintilla.h"
+#include "SciLexer.h"
 
 using namespace Polycode;
 
@@ -27,7 +31,15 @@ using namespace Polycode;
 PolyUICodeEditor::PolyUICodeEditor(String windowName, Number width, Number height)
 : BaseClass(windowName, width, height)
 {
-    scintilla = new Scintilla::ScintillaPolycode();
+    printf("***DEBUG***: %s\n", __FUNCTION__);
+
+    scintilla = new Scintilla::ScintillaPolycode(this);
+    scintilla->WndProc(SCI_SETLEXER, SCLEX_CPP, 0);
+    scintilla->WndProc(SCI_INSERTTEXT, 0, (sptr_t)
+        "int main(int argc, char **argv) {\n"
+        "    // Start up the gnome\n"
+        "    gnome_init(\"stest\", \"1.0\", argc, argv);\n}"
+    );
 }
 
 PolyUICodeEditor::~PolyUICodeEditor()
